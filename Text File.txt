@@ -1,0 +1,33 @@
+# def Q_learning(U,gamma,delta, epsilon,learning_rate):
+#     Q = np.zeros((K,K))
+#     prev_Q = np.zeros((K,K))
+#     t = 0
+#     while True:
+#         s = np.random.choice(K)
+#         while True:
+#             if np.random.random() < epsilon:  # Explore if e(t) times
+#                 s_prime = np.random.choice(K)
+#             else:  # Exploit 1-e(t) times
+#                 s_prime = np.argmax(Q[s])
+#             if np.random.random() < q:
+#                 target = Rewards[s][s_prime]
+#                 break
+#             else:
+#                 target = Rewards[s][s_prime]+gamma*np.max(Q[s_prime])
+#             Q[s][s_prime] = (1-learning_rate)*Q[s][s_prime] + learning_rate*target
+#             s=s_prime
+#         t+=1
+#         epsilon = (t+1)**(-1/3)*(K*math.log(t+1))**(1/3)
+#         if np.max(np.abs(prev_Q - Q)) < delta or t>Tmax: #check if the new V estimate is close enough to the previous one;
+#             break # if yes, finish loop
+#         prev_Q = Q.copy()
+#     return Q
+
+# pi_Q_learning  = np.zeros((K,N))
+
+# Q = Q_learning(U,1-q,1,0.1,0.5)
+
+# for s in range(K):
+#     pi_Q_learning[s] = get_N_max_values(Q[s])
+
+# print(pi_Q_learning)
